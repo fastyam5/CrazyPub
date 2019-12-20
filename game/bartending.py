@@ -122,6 +122,9 @@ class Bartending():
                     self.bartender.no_move_right()
                 elif event.key == K_LEFT:
                     self.bartender.no_move_left()
+                elif event.key == K_UP:
+                    if self.bartender.cur_lane == 0:
+                        self.bartender.cur_lane = 3
 
             #Key down presses
             if event.type == KEYDOWN:
@@ -141,6 +144,8 @@ class Bartending():
                 elif event.key == K_UP:
                     self.bartender.move_up()
                 elif event.key == K_DOWN:
+                    if self.bartender.cur_lane == 3:
+                        self.bartender.cur_lane = -1
                     self.bartender.move_down()
                 elif event.key == K_p:
                     self.game_paused = not self.game_paused
