@@ -245,8 +245,14 @@ class Newhighscore(Abstract_Menu):
                 except:
                     pass
 
+                if event.key == pygame.QUIT:
+                    pygame.quit()
+                    exit()
+
                 if event.key == K_RETURN:
-                    #TODO store highscore
+                    #TODO store highscore exit the game for now
+                    pygame.quit()
+                    exit()
                     highscores = Highscores_data()
                     print "Save new highscore {0} : {1}".format(self.player_name, self.bartending.score)
                     highscores.set_newhighscore(self.player_name.strip(), self.bartending.score)

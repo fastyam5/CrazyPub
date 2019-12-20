@@ -180,6 +180,8 @@ class EmptyBeer(pygame.sprite.Sprite):
         self.speed = 2
         
     def kill(self):
+        # if glass hits the ground game over
+        self.bartending.client_gone()
         pygame.sprite.Sprite.kill(self)
         
     def update(self):
